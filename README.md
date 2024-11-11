@@ -41,7 +41,11 @@ ClimViz is a powerful Python package that extends the ClimSim library with advan
 
 ## Installation
 
+
 ```bash
+# Follow the website: https://github.com/leap-stc/ClimSim/tree/main?tab=readme-ov-file
+# Download the ClimSim first
+
 # Clone the repository
 git clone https://github.com/yourusername/climviz.git
 
