@@ -3,11 +3,9 @@ class ScenarioManager:
         self.scenarios = {}
     
     def add_scenario(self, name: str, parameters: dict):
-        """Add a new climate scenario."""
         self.scenarios[name] = parameters
     
     def compare_scenarios(self, scenario1: str, scenario2: str, variable: str):
-        """Compare two climate scenarios."""
         model1 = ClimSim(**self.scenarios[scenario1])
         model2 = ClimSim(**self.scenarios[scenario2])
         
