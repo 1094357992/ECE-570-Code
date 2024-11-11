@@ -3,7 +3,6 @@
 A comprehensive extension for climate data visualization and analysis built on top of the ClimSim library.
 
 ![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)
 
 ## Overview
