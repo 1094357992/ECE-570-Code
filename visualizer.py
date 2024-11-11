@@ -9,7 +9,6 @@ class ClimateVisualizer:
         self.data = None
         
     def plot_temperature_distribution(self, year: int):
-        """Plot global temperature distribution for a specific year."""
         temp_data = self.model.get_temperature(year)
         plt.figure(figsize=(12, 6))
         sns.heatmap(temp_data, cmap='RdBu_r', center=0)
@@ -19,7 +18,6 @@ class ClimateVisualizer:
         return plt.gcf()
     
     def plot_time_series(self, variable: str, region: tuple = None):
-        """Plot time series of climate variables."""
         data = self.model.get_variable_data(variable)
         if region:
             lat_min, lat_max, lon_min, lon_max = region
