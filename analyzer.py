@@ -8,10 +8,7 @@ class ClimateAnalyzer:
                       start_year: int,
                       end_year: int,
                       method: str = 'linear') -> dict:
-        """
-        Enhanced trend analysis with multiple methods.
-        Methods: 'linear', 'polynomial', 'moving_average'
-        """
+
         data = self.model.get_variable_data(variable, start_year, end_year)
         
         if method == 'linear':
@@ -27,10 +24,7 @@ class ClimateAnalyzer:
                         variable: str,
                         threshold: Union[float, str],
                         duration: int = 1) -> dict:
-        """
-        Enhanced extreme event analysis with duration consideration.
-        threshold can be float or 'percentile_95'
-        """
+
         data = self.model.get_variable_data(variable)
         
         if isinstance(threshold, str) and threshold.startswith('percentile'):
@@ -51,7 +45,6 @@ class ClimateAnalyzer:
     def compute_correlations(self, 
                            variables: List[str],
                            method: str = 'pearson') -> pd.DataFrame:
-        """Compute correlations between multiple climate variables."""
         data_dict = {}
         for var in variables:
             data_dict[var] = self.model.get_variable_data(var)
@@ -62,10 +55,7 @@ class ClimateAnalyzer:
     def perform_decomposition(self, 
                             variable: str,
                             components: List[str]) -> dict:
-        """
-        Decompose climate signal into components.
-        Components: 'trend', 'seasonal', 'residual'
-        """
+
         data = self.model.get_variable_data(variable)
         result = {}
         
