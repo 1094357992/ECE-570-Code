@@ -17,13 +17,11 @@ class ClimateVisualizer:
         }
     
     def set_style(self, **kwargs):
-        """Update visualization style configuration."""
         self.style_config.update(kwargs)
     
     def plot_temperature_distribution(self, 
                                     year: int,
                                     overlay_features: bool = False) -> plt.Figure:
-        """Enhanced temperature distribution plot with optional geographic features."""
         temp_data = self.model.get_temperature(year)
         
         fig = plt.figure(figsize=self.style_config['figsize'])
@@ -45,7 +43,6 @@ class ClimateVisualizer:
                         start_year: int,
                         end_year: int,
                         fps: int = 10) -> FuncAnimation:
-        """Create animation of climate variable evolution."""
         fig = plt.figure(figsize=self.style_config['figsize'])
         ax = fig.add_subplot(1, 1, 1, projection=self.projection)
         
@@ -64,7 +61,6 @@ class ClimateVisualizer:
                               variables: List[str],
                               year: int,
                               region: Optional[Tuple] = None) -> plt.Figure:
-        """Plot multiple climate variables side by side."""
         n_vars = len(variables)
         fig, axes = plt.subplots(1, n_vars, 
                                 figsize=(6*n_vars, 6),
