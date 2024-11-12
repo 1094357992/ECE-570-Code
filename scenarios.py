@@ -8,7 +8,6 @@ class ScenarioManager:
                     name: str,
                     parameters: dict,
                     metadata: Optional[dict] = None):
-        """Add scenario with metadata."""
         self.scenarios[name] = parameters
         if metadata:
             self.metadata[name] = metadata
@@ -17,7 +16,6 @@ class ScenarioManager:
                        base_scenario: str,
                        parameter_ranges: dict,
                        n_members: int = 10) -> List[str]:
-        """Create ensemble of scenarios by varying parameters."""
         base_params = self.scenarios[base_scenario].copy()
         ensemble_members = []
         
@@ -36,7 +34,6 @@ class ScenarioManager:
     def combine_scenarios(self, 
                          scenarios: List[str],
                          weights: Optional[List[float]] = None) -> str:
-        """Create weighted combination of scenarios."""
         if weights is None:
             weights = [1.0 / len(scenarios)] * len(scenarios)
         
